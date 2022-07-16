@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WT LAB</title>
+        <link rel="stylesheet" href="Calc.css">
+    </head>
+    <body>
+        
+           <h1>Calculator</h1>
+           <div class="div2">
+               <table style="padding-left: 45px;">
+                        <input type ="text" name = "answer" class="calc" id="result">
+                        <tr>
+                            <td><input type="button" onclick="fun1()" id="button1" value="1"> </td>
+                            <td class="td"><input type="button" onclick="fun2()" id="button2" value="2" > </td>
+                            <td class="td"><input type="button" onclick="fun3()" id="button3" value="3"></td>
+                             <td class="td"><input type="button"  onclick="fun_add()" id="buttunadd" value="+" > </td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="fun4()" id="button4" value="4" > </td>
+                            <td class="td"><input type="button" onclick="fun5()" id="button5" value="5" > </td>
+                            <td class="td"><input type="button" onclick="fun6()" id="button6"  value="6" ></td>
+                            <td class="td"><input type="button"   onclick="fun_sub()" id="buttonsub"value="-" > </td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="fun7()" id="button7" value="7"> </td>
+                            <td class="td"><input type="button" onclick="fun8()" id="button8" value="8"> </td>
+                            <td class="td"><input type="button" onclick="fun9()" id="button9" value="9"></td>
+                                <td class="td"><input type="button" onclick="fun_mul()" id="buttonmul" value="*"> </td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" onclick="fun_dot()" id="buttondot"  value="."> </td>
+                            <td class="td"><input type="button" onclick="fun_zero()" id="buttonzero" value="0"> </td>
+                            <td class="td"><input type="button" onclick="fun_equal()" id="buttonequal" value="="></td>
+                                <td class="td"><input type="button" onclick="fun_div()" id="buttondiv" value="/"> </td>
+                        </tr>
+                        
+                    </table>
+                
+               
+                <input type="submit"  onclick="reset()"  value="clear" class= "clear"></td>
+                
+           </div>
+
+    </body>
+    <script type="text/javascript">
+        var temp=" ";
+        function store(){
+            document.getElementById('result').value=temp;
+        }
+        function fun1(){
+            var input1=document.getElementById('button1').value;
+            temp=temp+input1;
+            store(temp);
+        }
+        function fun2(){
+            var input2=document.getElementById('button2').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun3(){
+            var input2=document.getElementById('button3').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun4(){
+            var input2=document.getElementById('button4').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun5(){
+            var input2=document.getElementById('button5').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun6(){
+            var input2=document.getElementById('button6').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun7(){
+            var input2=document.getElementById('button7').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun8(){
+            var input2=document.getElementById('button8').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun9(){
+            var input2=document.getElementById('button9').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun_zero(){
+            var input2=document.getElementById('buttonzero').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun_add(){
+            var input2=document.getElementById('buttonadd').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun_sub(){
+            var input2=document.getElementById('buttonsub').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun_mul(){
+            var input2=document.getElementById('buttonmul').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun_div(){
+            var input2=document.getElementById('buttondiv').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun_dot(){
+            var input2=document.getElementById('buttondot').value;
+            temp=temp+input2;
+            store(temp);
+        }
+        function fun_equal(){
+            try {
+            var n = eval(document.getElementById("result").value); 
+            if(n=="Infinity" || n=="-Infinity"){
+                throw "Zero Division Error";
+            }
+
+            document.getElementById("result").value=n;
+            document.getElementById("result").style.background="green";
+            exp=n;               
+        }
+        catch(err){
+            if(err=="Zero Division Error"){
+                alert("Invalid\n"+err);
+
+            }
+            else{
+                alert("Invalid Error");
+            }
+            document.getElementById("result").style.background="red";
+       }
+        }
+function reset() {
+            document.getElementById('result').value = ''; 
+            temp=" ";
+        }
+        
+</script>
+</html>
